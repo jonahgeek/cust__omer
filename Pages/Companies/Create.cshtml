@@ -1,0 +1,42 @@
+@page
+@model Cust__omer.Pages.Companies.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row mt-5">
+    <div class="offset-md-4 col-md-4">
+        <div class="card">
+            <div class="card-header">Create New Company</div>
+            <div class="card-body">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-floating mb-3 mt-3">
+                        <input class="form-control" asp-for="Company.Name">
+                        <label asp-for="Company.Name"></label>
+                        <span asp-validation-for="Company.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" asp-for="Company.Address">
+                        <label asp-for="Company.Address"></label>
+                        <span asp-validation-for="Company.Address" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <div class="row">
+                            <div class="col-md">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                            <div class="col-md">    
+                                <a class="btn btn-sm btn-secondary" asp-page="Index">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
