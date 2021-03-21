@@ -1,0 +1,41 @@
+@page
+@model Cust__omer.Pages.Users.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container">
+    <div class="text-center mt-5">
+        <h3>Login to account</h3>
+        <div class="row">
+            <div class="offset-md-4 col-md-4">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-floating mb-3 mt-3">
+                        <input asp-for="User.Email" class="form-control" />
+                        <label asp-for="User.Email" class="control-label"></label>
+                        <span asp-validation-for="User.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="User.Password" class="form-control" />
+                        <label asp-for="User.Password" class="control-label"></label>
+                        <span asp-validation-for="User.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <div class="d-grid">
+                            <input type="submit" value="Login" class="btn btn-info" />
+                        </div>
+                    </div>
+                </form>
+                <div class="text-center">
+                    <a asp-page="Create">Need a new account?</a>
+                </div>
+
+            </div>
+        </div>
+    </div>   
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -20,7 +20,7 @@ namespace Cust__omer.Pages.Customers
 
         public IActionResult OnGet()
         {
-        ViewData["CompanyId"] = new SelectList(_context.Set<Company>(), "Id", "Address");
+        ViewData["CompanyId"] = new SelectList(_context.Set<Company>(), "Id", "Name");
             return Page();
         }
 
